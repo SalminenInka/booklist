@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  application:
+    image: "localhost:6000/cronolog:latest"
+    ports:
+      - "40000:4444"
+    environment:
+      PORT: 4444
+      DB_HOST: host.docker.internal
+      DB_PORT: 5432
+      DB_USER: inkasalminen
+      DB_NAME: time_echo
+      DB_PASSWORD: Smörrebröd2022
+      DB_POOL_SIZE: 10
+      DEBUG: app, app:*
